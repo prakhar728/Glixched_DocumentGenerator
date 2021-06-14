@@ -26,4 +26,4 @@ const templateSchema = mongoose.Schema({
 
 const tempSchema = mongoose.model('Template',templateSchema);
 
-export default templateSchema;
+export default tempSchema;

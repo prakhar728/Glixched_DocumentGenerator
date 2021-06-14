@@ -8,7 +8,7 @@ import {
   TextField,
 } from "@material-ui/core";
 import SendIcon from "@material-ui/icons/Send";
-import createTemp from '../../Actions/index';
+import createTemp from "../../Actions/index";
 const TemplateGenerator = () => {
   const [templateData, createTemplate] = useState({
     Name: "",

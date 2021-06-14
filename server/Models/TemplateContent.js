@@ -24,6 +24,6 @@ const templateSchema = mongoose.Schema({
     }
 });
 
-const PostMessage = mongoose.model('PostMessage',postSchema);
+const tempSchema = mongoose.model('Template',templateSchema);
 
 export default templateSchema;

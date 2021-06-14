@@ -5,6 +5,10 @@ import mongoose from 'mongoose';
 //Cors is another express middleware used for routing
 import cors from 'cors';
 
+import templateRoutes from './Routes/templates.js';
+import dotenv from 'dotenv';
+dotenv.config();
+var CONNECTION_URL=process.env.URL;
 const app =express();
 
 app.use(express.json({ limit: "30mb", extended: true }));
@@ -13,8 +17,9 @@ app.use(express.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 app.use('/templates',templateRoutes);
 
-const CONNECTION_URL=
-"mongodb+srv://reactappmaster:samsung123@reactapp.0ltwq.mongodb.net/Glixched?retryWrites=true&w=majority"
+
+
+
 
   // Why a PORT definiton? To specify for Heroku on what port to listen to
 const PORT = process.env.PORT || 5000

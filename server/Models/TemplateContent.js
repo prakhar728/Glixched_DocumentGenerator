@@ -6,6 +6,7 @@ const templateSchema = mongoose.Schema({
     Batch:String,
     Aim:String,
     ExperimentNo:Number,
+    RollNumber:Number,
     Theory:{
         type:String,
         required:false

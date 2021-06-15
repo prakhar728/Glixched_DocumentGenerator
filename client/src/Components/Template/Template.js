@@ -66,6 +66,16 @@ const TemplateGenerator = () => {
               <TextField
                 required
                 id="standard-required"
+                label="Roll Number"
+                onChange={(e) =>
+                  createTemplate({ ...templateData, RollNumber: e.target.value })
+                }
+              />
+            </Grid>
+            <Grid item>
+              <TextField
+                required
+                id="standard-required"
                 label="Batch"
                 onChange={(e) =>
                   createTemplate({ ...templateData, Batch: e.target.value })

@@ -1,4 +1,4 @@
-const page = (name,rollNumber,collegeName,branch,batch,experimentNo,aim,theory,procedure,observation,conclusion) =>{
+const page = (Name,RollNumber,CollegeName,Branch,Batch,ExperimentNo,Aim,Theory,Procedure,Apparatus,Observation,Conclusion) =>{
     return(
         `
         <!DOCTYPE html>
@@ -52,24 +52,24 @@ const page = (name,rollNumber,collegeName,branch,batch,experimentNo,aim,theory,p
     <div class="container">
       <div class="upperGrid">
         <div class="left">
-          <div>Name:${name}</div>
-          <div>Roll Number:${rollNumber}</div>
+          <div>Name:${Name}</div>
+          <div>Roll Number:${RollNumber}</div>
         </div>
         <div class="right">
-          <div>College Name:${collegeName}</div>
-          <div>Branch:${branch}</div>
-          <div>Batch:${batch}</div>
+          <div>College Name:${CollegeName}</div>
+          <div>Branch:${Branch}</div>
+          <div>Batch:${Batch}</div>
         </div>
       </div>
       <div class="ExperimentHeading">
-        <div><h1>Experiment Number:${experimentNo}</h1></div>
+        <div><h1>Experiment Number:${ExperimentNo}</h1></div>
       </div>
       <div class="lowerGrid">
-        <div class="Aim"><span>Aim:-></span>${aim}</div>
-        <div class="Theory"><span>Theory:-></span>${theory}</div>
-        <div class="Procedure"><span>Procedure:-></span>${procedure}</div>
-        <div class="Obersvation"><span>Observation:-></span>${observation}</div>
-        <div class="Conclusion"><span>Conclusion:-></span>${conclusion}</div>
+        <div class="Aim"><span>Aim:-></span>${Aim}</div>
+        <div class="Theory"><span>Theory:-></span>${Theory}</div>
+        <div class="Procedure"><span>Procedure:-></span>${Procedure}</div>
+        <div class="Obersvation"><span>Observation:-></span>${Observation}</div>
+        <div class="Conclusion"><span>Conclusion:-></span>${Conclusion}</div>
       </div>
     </div>
   </body>

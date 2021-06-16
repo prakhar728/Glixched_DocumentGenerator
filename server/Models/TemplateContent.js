@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 const templateSchema = mongoose.Schema({
     Name:String,
     CollegeName:String,
+    Branch:String,
     Batch:String,
     Aim:String,
     ExperimentNo:Number,
@@ -20,6 +21,10 @@ const templateSchema = mongoose.Schema({
         required:false
     },
     Conclusion:{
+        body:String,
+        required:false
+    },
+    Observation:{
         body:String,
         required:false
     }

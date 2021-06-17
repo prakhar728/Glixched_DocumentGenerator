@@ -8,18 +8,21 @@ import {
   TextField,
 } from "@material-ui/core";
 import SendIcon from "@material-ui/icons/Send";
-import createTemp from "../../Actions/index";
+import { createTemp,fetchTemplate} from "../../Actions/index";
 const TemplateGenerator = () => {
   const [templateData, createTemplate] = useState({
     Name: "",
     CollegeName: "",
     Batch: "",
     Aim: "",
+    Branch:"",
+    RollNumber:0,
     ExperimentNo: 0,
     Theory: "",
     Procedure: "",
     Appartus: "",
     Conclusion: "",
+    Observation:"",
   });
 
   return (
@@ -132,10 +135,23 @@ const TemplateGenerator = () => {
           type="Submit"
           onClick={(e) => {
             e.preventDefault();
-            createTemp(templateData);
+           createTemp(templateData);
           }}
         >
           Submit
+        </Button>
+        <Button
+          variant="contained"
+          size="medium"
+          color="secondary"
+          endIcon={<SendIcon />}
+          
+          onClick={(e) => {
+            e.preventDefault();
+            fetchTemplate();
+          }}
+        >
+          Get PDF
         </Button>
       </form>
     </Container>

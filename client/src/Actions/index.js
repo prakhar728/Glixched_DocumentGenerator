@@ -1,5 +1,8 @@
-import createTemp from '../Api/index.js';
- const createTemplate= async (template)=>{
- createTemp(template);
+import  {fetchTemp, createTemplate} from '../Api/index.js';
+ const createTemp= async (template)=>{
+ createTemplate(template);
 }
-export default createTemplate;
+const fetchTemplate = ()=>{
+    console.log("Fetching the Template");
+}
+export {createTemp,fetchTemplate};

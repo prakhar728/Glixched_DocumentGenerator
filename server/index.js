@@ -16,11 +16,6 @@ app.use(express.urlencoded({ limit: "30mb", extended: true }));
 //cors gives a protective layer to the HTTP request
 app.use(cors());
 app.use('/templates',templateRoutes);
-
-
-
-
-
   // Why a PORT definiton? To specify for Heroku on what port to listen to
 const PORT = process.env.PORT || 5000
 

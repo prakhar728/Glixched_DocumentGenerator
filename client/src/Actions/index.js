@@ -3,6 +3,6 @@ import  {fetchTemp, createTemplate} from '../Api/index.js';
  createTemplate(template);
 }
 const fetchTemplate = ()=>{
-    console.log("Fetching the Template");
+    fetchTemp();
 }
 export {createTemp,fetchTemplate};

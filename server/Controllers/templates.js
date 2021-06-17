@@ -1,9 +1,11 @@
 import TemplateContent from "../Models/TemplateContent.js";
+import path from 'path';
 // import htmlPdf from 'html-pdf-node';
 import boilerTemp from "../BoilerplateTemplate/BoilerTemplate1.js";
 import htmlPDF from 'html-pdf';
 export const getTemplate = async (req, res) => {
-    res.sendFile((`${__dirname}/result.pdf`));
+    // res.sendFile(`${__dirname}/result.pdf`);
+     res.sendFile(`${process.cwd()}/result.pdf`);
 //   try {
 //     const template = await TemplateContent.find();
 //     res.staus(200).json(template);

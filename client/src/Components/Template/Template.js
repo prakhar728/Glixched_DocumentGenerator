@@ -20,7 +20,7 @@ const TemplateGenerator = () => {
     ExperimentNo: 0,
     Theory: "",
     Procedure: "",
-    Appartus: "",
+    Apparatus: "",
     Conclusion: "",
     Observation: "",
     Keyword: "",
@@ -184,7 +184,7 @@ const TemplateGenerator = () => {
               className={styles.gridItem}
               multiline="True"
               onChange={(e) =>
-                createTemplate({ ...templateData, Appartus: e.target.value })
+                createTemplate({ ...templateData, Apparatus: e.target.value })
               }
             />
           </Grid>

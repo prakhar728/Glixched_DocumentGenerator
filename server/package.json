@@ -19,6 +19,7 @@
     "html-pdf-node": "^1.0.7",
     "mongoose": "^5.12.13",
     "nodemon": "^2.0.7",
-    "puppeteer": "^5.5.0"
+    "puppeteer": "^5.5.0",
+    "sleep-promise": "^9.1.0"
   }
 }

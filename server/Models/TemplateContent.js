@@ -27,7 +27,8 @@ const templateSchema = mongoose.Schema({
     Observation:{
         body:String,
         required:false
-    }
+    },
+    Keyword:String,
 });
 
 const tempSchema = mongoose.model('Template',templateSchema);

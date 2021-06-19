@@ -9,6 +9,7 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "autosize": "^5.0.0",
     "axios": "^0.21.1",
     "file-saver": "^2.0.5",
     "react": "^17.0.2",

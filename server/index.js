@@ -9,6 +9,7 @@ import templateRoutes from "./Routes/templates.js";
 import dotenv from "dotenv";
 dotenv.config();
 var CONNECTION_URL = process.env.URL;
+console.log(CONNECTION_URL)
 const app = express();
 
 app.use(express.json({ limit: "30mb", extended: true }));

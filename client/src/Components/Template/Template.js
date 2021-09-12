@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
-  Grid,
   Button,
   Container,
   TextField,
-  createMuiTheme,
 } from "@material-ui/core";
 import SendIcon from "@material-ui/icons/Send";
 import { createTemp, fetchTemplate } from "../../Actions/index";
@@ -25,195 +23,186 @@ const TemplateGenerator = () => {
     Observation: "",
     Keyword: "",
   });
-  const theme = createMuiTheme({
-    overrides: {
-      MuiGrid: {},
-    },
-  });
+  
   return (
-    <Container style={{ backgroundColor: "white" }}>
+    <Container style={{ backgroundColor: "white" }} className={styles.Container}>
       <form noValidate autoComplete="off" className={styles.formContainer}>
-        <Grid
-          container
-          direction="column"
-          sm={12}
-          justify="center"
-          alignContent="center"
-        >
-          <Grid container item direction="row" spacing={2}>
-            <Grid item>
-              <TextField
-                className={styles.gridItemSmall}
-                required="True"
-                name="Name"
-                id="standard-required"
-                label="Your Name"
-                onChange={(e) =>
-                  createTemplate({ ...templateData, Name: e.target.value })
-                }
-              />
-            </Grid>
-            <Grid item>
-              <TextField
-                required
-                className={styles.gridItemSmall}
-                id="standard-required"
-                label="College Name"
-                onChange={(e) =>
-                  createTemplate({
-                    ...templateData,
-                    CollegeName: e.target.value,
-                  })
-                }
-              />
-            </Grid>
-            <Grid item>
-              <TextField
-                required
-                className={styles.gridItemSmall}
-                id="standard-required"
-                label="Branch"
-                onChange={(e) =>
-                  createTemplate({ ...templateData, Branch: e.target.value })
-                }
-              />
-            </Grid>
-          </Grid>
-          <Grid container item direction="row" spacing={2}>
-            <Grid item>
-              <TextField
-                required
-                className={styles.gridItemSmall}
-                id="standard-required"
-                label="Roll Number"
-                onChange={(e) =>
-                  createTemplate({
-                    ...templateData,
-                    RollNumber: e.target.value,
-                  })
-                }
-              />
-            </Grid>
-            <Grid item>
-              <TextField
-              className={styles.gridItemSmall}
-                required
-                id="standard-required"
-                label="Batch"
-                onChange={(e) =>
-                  createTemplate({ ...templateData, Batch: e.target.value })
-                }
-              />
-            </Grid>
-            <Grid item>
-              <TextField
-                required
-                className={styles.gridItemSmall}
-                id="standard-required"
-                label="Experiment Number"
-                onChange={(e) =>
-                  createTemplate({
-                    ...templateData,
-                    ExperimentNo: e.target.value,
-                  })
-                }
-              />
-            </Grid>
-          </Grid>
+        <div className={styles.divContainer}>
+          <div className={styles.divLeft}>
+            <TextField
+              variant="outlined"
+              className={styles.field}
+              required="True"
+              name="Name"
+              id="standard-required"
+              label="Your Name"
+              onChange={(e) =>
+                createTemplate({ ...templateData, Name: e.target.value })
+              }
+            />
+            <TextField
+              required
+              variant="outlined"
+              className={styles.field}
+              id="standard-required"
+              label="College Name"
+              onChange={(e) =>
+                createTemplate({
+                  ...templateData,
+                  CollegeName: e.target.value,
+                })
+              }
+            />
+            <TextField
+              variant="outlined"
+              required
+              className={styles.field}
+              id="standard-required"
+              label="Branch"
+              onChange={(e) =>
+                createTemplate({ ...templateData, Branch: e.target.value })
+              }
+            />
+          </div>
+          <div className={styles.divRight}>
+            <TextField
+              required
+              variant="outlined"
+              className={styles.field}
+              id="standard-required"
+              label="Roll Number"
+              onChange={(e) =>
+                createTemplate({
+                  ...templateData,
+                  RollNumber: e.target.value,
+                })
+              }
+            />
 
-          <Grid item sm={12}>
             <TextField
+              variant="outlined"
+              className={styles.field}
               required
               id="standard-required"
-              label="Aim"
-              rowsMax="3"
-              multiline="True"
-              className={styles.gridItem}
-              size="large"
+              label="Batch"
               onChange={(e) =>
-                createTemplate({ ...templateData, Aim: e.target.value })
+                createTemplate({ ...templateData, Batch: e.target.value })
               }
             />
-          </Grid>
 
-          <Grid item>
             <TextField
               required
+              variant="outlined"
+              className={styles.field}
               id="standard-required"
-              label="Theory"
-              rowsMax="3"
-              multiline="True"
-              className={styles.gridItem}
+              label="Experiment Number"
               onChange={(e) =>
-                createTemplate({ ...templateData, Theory: e.target.value })
+                createTemplate({
+                  ...templateData,
+                  ExperimentNo: e.target.value,
+                })
               }
             />
-          </Grid>
-          <Grid item>
-            <TextField
-              required
-              id="standard-required"
-              label="Procedure"
-              className={styles.gridItem}
-              rowsMax="3"
-              multiline="True"
-              onChange={(e) =>
-                createTemplate({ ...templateData, Procedure: e.target.value })
-              }
-            />
-          </Grid>
-          <Grid item>
-            <TextField
-              required
-              id="standard-required"
-              rowsMax="3"
-              label="Observation"
-              className={styles.gridItem}
-              multiline="True"
-              onChange={(e) =>
-                createTemplate({ ...templateData, Observation: e.target.value })
-              }
-            />
-          </Grid>
-          <Grid item>
-            <TextField
-              required
-              id="standard-required"
-              rowsMax="3"
-              label="Apparatus"
-              className={styles.gridItem}
-              multiline="True"
-              onChange={(e) =>
-                createTemplate({ ...templateData, Apparatus: e.target.value })
-              }
-            />
-          </Grid>
-          <Grid item>
-            <TextField
-              id="standard-required"
-              label="Conclusion"
-              className={styles.gridItem}
-              size="medium"
-              rowsMax="3"
-              multiline="True"
-              required
-              onChange={(e) =>
-                createTemplate({ ...templateData, Conclusion: e.target.value })
-              }
-            />
-          </Grid>
-          <Grid item>
-            <TextField
-              id="standard-required"
-              label="Keyword to be Used"
-              className={styles.gridItemSmall}
-              required
-              onChange={(e) =>
-                createTemplate({ ...templateData, Keyword: e.target.value })
-              }
-            />
-          </Grid>
-        </Grid>
+          </div>
+        </div>
+
+        <TextField
+          variant="outlined"
+          required
+          id="standard-required"
+          label="Aim"
+          rowsMax="3"
+          multiline="True"
+          className={styles.fieldLong}
+          size="large"
+          onChange={(e) =>
+            createTemplate({ ...templateData, Aim: e.target.value })
+          }
+        />
+
+        <TextField
+          required
+          variant="outlined"
+          id="standard-required"
+          label="Theory"
+          rowsMax="3"
+          multiline="True"
+          className={styles.fieldLong}
+
+          onChange={(e) =>
+            createTemplate({ ...templateData, Theory: e.target.value })
+          }
+        />
+
+        <TextField
+          required
+          id="standard-required"
+          variant="outlined"
+          label="Procedure"
+          className={styles.fieldLong}
+
+          rowsMax="3"
+          multiline="True"
+          onChange={(e) =>
+            createTemplate({ ...templateData, Procedure: e.target.value })
+          }
+        />
+
+        <TextField
+          required
+          id="standard-required"
+          variant="outlined"
+          rowsMax="3"
+          label="Observation"
+          className={styles.fieldLong}
+
+          multiline="True"
+          onChange={(e) =>
+            createTemplate({ ...templateData, Observation: e.target.value })
+          }
+        />
+
+        <TextField
+          required
+          id="standard-required"
+          variant="outlined"
+          rowsMax="3"
+          label="Apparatus"
+          className={styles.fieldLong}
+
+          multiline="True"
+          onChange={(e) =>
+            createTemplate({ ...templateData, Apparatus: e.target.value })
+          }
+        />
+
+        <TextField
+          id="standard-required"
+          variant="outlined"
+          label="Conclusion"
+          className={styles.fieldLong}
+
+          size="medium"
+          rowsMax="3"
+          multiline="True"
+          required
+          onChange={(e) =>
+            createTemplate({ ...templateData, Conclusion: e.target.value })
+          }
+        />
+
+        <TextField
+          variant="outlined"
+          id="standard-required"
+          label="Keyword to be Used"
+          className={styles.fieldLong}
+
+          required
+          onChange={(e) =>
+            createTemplate({ ...templateData, Keyword: e.target.value })
+          }
+        />
+
         <Container className={styles.ButtonContainer}>
           <Button
             variant="contained"
@@ -225,6 +214,7 @@ const TemplateGenerator = () => {
               e.preventDefault();
               createTemp(templateData);
             }}
+            className={styles.button}
           >
             Submit
           </Button>
@@ -234,6 +224,8 @@ const TemplateGenerator = () => {
             size="medium"
             color="secondary"
             endIcon={<SendIcon />}
+            className={styles.button}
+
             onClick={(e) => {
               e.preventDefault();
               fetchTemplate();

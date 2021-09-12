@@ -1,24 +1,88 @@
-.Button{
-    margin:10px ;
-}
+
 .formContainer{
     border:2px solid black;
-    width:80vw;
+    margin-left: auto;
+    margin-right: auto;
+    width:60vw;
     display: flex;
- flex-direction: column;
- justify-content: center;
- align-items: center;
- align-content: center;
- margin: 20px;
- padding:20px;
+    flex-direction: column;
+    padding: 10px;
+    justify-content: space-evenly;
+    align-content: center;
+    align-items: center;
+}
+.field{
+    width:20vw;
+    margin:20px;
+}
+.fieldLong{
+    width: 43vw;
+    margin: 10px;
+}
+.divContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 10px;
+}
+.divLeft{
+    display: flex;
+    flex-direction: column;
+ 
+}
+.divRight{
+    display: flex;
+    flex-direction: column;
 }
 .ButtonContainer{
-    margin:10px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: space-between;
+    padding: 30px;
 }
-.gridItemSmall{
-    margin:10px;
-}
-.gridItem{
-    width:50vw;
-    margin:10px;
+
+@media only screen and (max-width:400px){
+    .formContainer{
+        border:2px solid black;
+        margin-left: auto;
+        margin-right: auto;
+        width:80vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-content: center;
+        align-items: center;
+    }
+    .field{
+        width:30vw;
+        margin:20px;
+        font-size: 10px;
+    }
+    .fieldLong{
+        width: 60vw;
+        margin: 10px;
+    }
+    .divContainer{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        padding: 10px;
+    }
+    .divLeft{
+        display: flex;
+        flex-direction: column;
+    }
+    .divRight{
+        display: flex;
+        flex-direction: column;
+    }
+    .ButtonContainer{
+        display: flex;
+        justify-content: space-evenly;
+        border:2px solid blue
+    }
+    .Button{
+        margin:10px;
+    }
 }
